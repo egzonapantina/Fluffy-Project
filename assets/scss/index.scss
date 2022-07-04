@@ -1,0 +1,504 @@
+@use 'fonts.scss';
+@use 'reset.scss';
+
+//colors
+
+$text-color: #13253A;
+$blue: #2557AB; 
+$purple: #FF7F57;
+$darkb-blue: #11364E;
+$white: #ffff;
+$background-color: #F2F2F2;
+$light-gray: #F4F6F7;
+$border-color: #DCE2E6;
+$iconttl-color: #3B4D6C;
+
+
+
+
+
+p {
+  font-weight: fonts.$fv-regular;
+  font-size: 1.6rem;
+  line-height: 2.7rem;
+}
+
+h2 {
+  font-weight: fonts.$fv-bold;
+  font-size: 4.6rem;
+  line-height: 6.3rem;
+}
+
+h3 {
+  font-weight: fonts.$fv-regular;
+  font-size: 3.8rem;
+  line-height: 5.2rem;
+}
+
+h4 {
+  font-weight: fonts.$fv-bold;
+  font-size: 2rem;
+  line-height: 2.7rem;
+}
+
+h5 {
+  font-weight: fonts.$fv-medium;
+  font-size: 1.6rem;
+  line-height: 2.2rem;
+}
+
+h6 {
+  font-weight: 400;
+  font-size: 46px;
+  line-height: 63px;
+}
+
+h7 {
+  font-style: italic;
+  font-weight: fonts.$fv-regular;
+  font-size: 20px;
+  line-height: 30px;
+}
+
+
+
+
+@mixin button {
+  width: 33.6rem;
+  height: 6rem;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  border: 0;
+}
+
+@mixin button-desc {
+  font-weight: fonts.$fv-semibold;
+  font-size: 1.7rem;
+  line-height: 2.3rem;
+  text-decoration: none;
+  border: 0;
+  text-align: center;
+}
+
+@mixin flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@mixin contact-desc {
+  font-weight: fonts.$fv-medium;
+  font-size: 1.6rem;
+  line-height: 2.2rem;
+  color: $white;
+  mix-blend-mode: normal;
+  opacity: 0.2;
+}
+
+
+
+:root {
+  scroll-behavior: smooth;
+  font-family: fonts.$font-poppins;
+  font-size: 10px;
+}
+
+img {
+  max-width: 100%;
+}
+
+
+body {
+  background-color: $background-color;
+  max-width: 144rem;
+
+}
+
+//start of main part
+main {
+  background-color: $light-gray;
+  border-bottom: 1px solid $border-color;
+
+  div {
+    width: 80%;
+    padding: 4rem 10% 17.8rem 10%;
+    background-color: $light-gray;
+    
+    //start of main navigation
+    .main-nav {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 14rem;
+      background-color: $light-gray;
+    
+      &__nav-list {
+        display: flex;
+        align-items: center;
+        gap: 5rem;
+        list-style: none;
+      }
+      &__nav-list a {
+        font-weight: fonts.$fv-semibold;
+        font-size: 1.4rem;
+        line-height: 1.2rem;
+        text-decoration: none;
+        color: $text-color;
+      }
+      &__nav-list a:hover {
+        text-decoration: underline;
+      } 
+    }
+    //end of main navigation
+
+    //start of main banner
+    .main-banner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 13rem;
+    
+      &__text {
+        width: 33%;
+      }
+    
+      &__subtitle {
+        color: $blue;
+        margin-bottom: 0.5rem;
+      }
+    
+      &__title {
+        margin-bottom: 1rem;
+        color: $text-color;
+      }
+    
+      &__main-banner__desc {
+        margin-bottom: 2rem;
+        color: $text-color;
+      }
+    
+      &__btn1 {
+        @include button;
+        background-color: $purple;
+      }
+      
+      &__btn1-desc {
+        @include button-desc;
+        background-color: $purple;
+        color: $white;
+      }
+    }
+    //end of main banner
+  }
+}
+
+
+//start of services section
+.services {
+  padding: 11.9rem 10% 10rem 10%;
+  background-color: $background-color;
+  background-color: $white;  
+  
+  .src {
+    @include flex();
+  }
+
+  &__src-main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 3.5%;  
+  }
+
+  &__article {
+    min-width: 31%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+  }
+  
+  &__subtitle {   
+    color: $blue;
+    text-align: center;
+    margin: 0 0 0.5rem 0;
+  }
+  
+  &__title {
+    color: $text-color;
+    margin-bottom: 3rem;
+    
+  }
+  
+  &__icon-title {
+    color: $iconttl-color;
+    text-align: center;
+    margin: 2rem 0 0.5rem 0;
+  }
+  
+  &__icon-desc {
+    color: $text-color;
+    text-align: center;
+    margin-top: 0.5rem;
+  }
+  
+ 
+}
+//end of services section
+
+
+//start of experience section
+.experience {
+  padding: 6rem 33.5rem 6rem 33rem;
+  background-color: $light-gray;
+  
+  div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__number {
+    color: $text-color;
+    margin: 0;
+  }
+  
+  &__sign {
+    color: $purple;
+  }
+  
+  &__desc {
+    color: $blue;
+    margin-bottom: 0;
+  }
+}
+//end of experience section
+
+
+//start of about-us section
+.about-us {
+  padding: 13.7rem 23.5rem 6.2rem 23.5rem;
+  background-color: $white;
+  
+  .about-div {
+    @include flex();
+  }
+  
+  &__paragarph {
+    display: flex;
+    justify-content: space-between;
+    gap: 3rem; 
+  }
+
+  &__main {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  &__main-title {
+    color: $text-color;
+    margin-bottom: 3rem;
+  }
+
+  &__first {
+    margin-top: 18rem;
+  }
+  
+  &__subtitle {
+    color: $text-color;
+    margin-bottom: 2rems;
+  }
+    
+  &__desc {
+    color: $text-color;
+  }
+    
+  &__main-subtitle {
+    color: $blue;
+    margin-bottom: 0.5rem;
+  }
+  
+  &__logos {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 7.5rem;
+    margin-top: 6rem;
+  }
+}
+//end of about-us section
+
+
+//start of relax section
+.relax {
+  background-color: $white;
+  padding: 0 10%;
+
+  .relax-div {
+    display: flex;
+    justify-content: space-between;
+    gap: 17.2rem;
+    border-top: 1px solid $border-color;
+    padding-top: 10rem;
+  }
+  
+  &__article {
+    display: flex;
+    flex-direction: column;
+    min-width: 47rem;
+  }
+
+  &__title {
+    color: $text-color;
+    font-weight: fonts.$fv-bold;
+    margin: 0;
+    margin-bottom: 2rem;
+  }
+
+  &__desc {
+    color: $text-color;
+    margin-bottom: 2rem;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    color: $text-color;
+    gap: 1.2rem;
+  }
+
+  &__list-li {
+    display: flex;
+    justify-content: space-between;
+    gap: 1.5rem;
+  }
+  
+  &__relaxing-img {
+    margin: 2.5rem 0 3.4rem 0;
+  }
+}
+//end of relax section
+
+//start of get started section
+.get-started {
+  @include flex();
+  background-color: $purple;
+  padding: 10rem 32rem;
+  color: $white;
+
+
+  &__subtitle {
+    margin-bottom: 0.5rem;
+  }
+  
+  &__title {
+    margin-bottom: 1rem;
+  }
+  
+  &__desc {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  &__btn2 {
+    @include button();
+    background-color: $blue;
+  
+  }
+  
+  &__btn2-desc {
+    @include button-desc();
+    background-color: $blue;
+    color: $white;
+  }
+}
+//end of get started section
+
+
+//start of contact section
+.contact {
+  background-color: $darkb-blue;
+  padding: 14rem 53.5rem;
+  @include flex();
+  color: $white;
+  gap: 3rem;
+
+  &__title {
+    text-align: center;
+    letter-spacing: -0.5px;
+    margin: 0;
+  
+  }
+
+  &__contact-us {
+    @include flex();
+    gap: 4rem;
+
+    div {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      
+      border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+      min-width: 37.1rem;
+    }
+
+    label {
+      font-weight: fonts.$fv-medium;
+      font-size: 1.3rem;
+      line-height: 1.8rem;
+    }
+
+    
+    input[type=text], input[type=email] {
+        width: 100%;
+        margin-bottom: 0.5rem;
+        box-sizing: border-box;
+        border: none;
+        display: inline-block;
+        background-color: $darkb-blue;
+    }
+
+    textarea {
+      width: 100%;
+      height: 10.2rem;
+      box-sizing: border-box;
+      border: none;
+      border-radius: 0.4rem;
+      background-color: $darkb-blue;
+      margin-bottom: 1rem;
+      resize: none;
+      @include contact-desc();
+    }
+  }
+
+  &__fname, &__email {
+    @include contact-desc();
+    opacity: 0.5;
+  }
+
+  .btn3 {
+    @include button();
+    background-color: $purple;
+  }
+  
+  .btn3-desc {
+    @include button-desc();
+    width: 37.1rem;
+    color: $white;
+  }
+}
+//end of contact section
+
+//strat of footer
+.footer {
+  font-weight: fonts.$fv-regular;
+  font-size: 1.2rem;
+  line-height: 1.6rem;
+  text-align: center;
+  background-color: $text-color;
+  color: $white;
+  mix-blend-mode: normal;
+  opacity: 0.8;
+  padding: 1.6rem 62rem;
+}
+//end of footer
